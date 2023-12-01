@@ -16,26 +16,31 @@
 
     </body>
 </html> <script>
-    const chiave='genere';
 
-    const persona = {
-        nome: 'Luca',
-        cognome: 'Rossi',
-        chiave:'bdf76d98n',
-        eta:25,
-        genere: 'M',
-        interessi: ['snowboard','bascket','picnik'],
-        indirizzo: {
-            via: 'piazza roma',
-            cap: '18394', 
-            provincia: 'MI',
-            citta: 'milano',
-        },
-        saluta: function (){ console.log(`Ciao sono ${persona.nome}`) },
+    class persona{
+        constructor(nome, cognome, eta, genere, interessi){
+            this.nome=nome;
+            this.cognome=cognome;
+            this.eta=eta;
+            this.genere=genere;
+            this.interessi=interessi;        
+        }
+        saluta(){ console.log(`Ciao sono ${this.nome}`); }
     }
-    console.log(persona.chiave);
-    console.log(persona[chiave]);
+    class insegnante extends persona{
+        constructor(nome, cognome, eta, genere, interessi, materia){
+            super(nome, cognome, eta, genere, interessi);
+            this.materia=materia;
+        }
+        get materia(){ return this._materia; } set materia(nuovaMateria){ this._materia=nuovaMateria }
+        riprendiAlunno(nomeAlunno){ console.log(`${nomeAlunno} non mangiare in classe`); }
+    }
 
+    const insegnante1 = new insegnante('Anna', 'Blu',32, 'femmina', ['Netflix'],'Storia')
+
+    console.log(insegnante1.materia);
+    insegnante1.saluta();
+    insegnante1.riprendiAlunno('Giorgio');
 
 </script> <style>
     html{background: black; color: wheat;} *{ padding:5px; margin:0;}
