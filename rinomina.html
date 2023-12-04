@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script src="pag1.js"></script>
         <title>Pagina 1</title>
+
     </head>
     <body>
-        <h1>Titolo</h1>
-        <p>Paragrafo</p>
-        <input type="tesxt" value="Input">
+        <form action="" method="get">
+            <h1>Database</h1>
+            <input id="nome" type="text" value="" placeholder="">
+            <input id="cognome" type="text" value="" placeholder="">
+            <button type="submit">Rinomina</button>
+        </form>
 
     </body>
 </html> <script>
 
+    let sNome = 'Inserire nome';
+    let sCognome = 'Inserire cognome';
+    const form=document.querySelector('form');
+    const nome=document.querySelector('#nome'); nome.placeholder=sNome;
+    const cognome=document.querySelector('#cognome'); cognome.placeholder=sCognome;
+    console.log(nome);
+/*
+    nome.addEventListener('change', function(){ //Rinomina nome
+        console.log(nome.value);
+        nome.placeholder=nome.value; nome.value=null; //quando inserisci nell'input si resetta
+    })
+    cognome.addEventListener('change', function(){ //Rinomina cognome
+        console.log(cognome.value);
+        cognome.placeholder=cognome.value; cognome.value=null;
+    })*/
 
+    form.addEventListener('submit',()=>{
+        console.log(nome.value); sNome=nome.value;
+        console.log(cognome.value); sCognome=cognome.value;
+
+        nome.placeholder=sNome; nome.value=null; //quando inserisci nell'input si resetta
+        cognome.placeholder=sCognome.value; cognome.value=null;
+    })
 
 </script> <style>
-    html{background: black; color: wheat;} *{ padding:5px; margin:0;}
-    form div, form input, form button{ padding:5px; }
-    form input{ 
-        border-top-left-radius:10px; 
-        border-top-right-radius:10px; 
-        border-bottom:5px solid black;
-    } form input:hover{ border-bottom:5px solid red; }
+    html{background: black; color: wheat;} *{ padding:5px; margin:0;transition:0.3s;}
+    form input, form button{ padding:10px; border-radius:10px; border-bottom:5px solid black; }
+    form input:hover,form button:hover{background:wheat;}
 
 </style>
