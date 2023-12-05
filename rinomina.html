@@ -2,46 +2,33 @@
 <html lang="en">
     <head>
         <title>Pagina 1</title>
-
     </head>
     <body>
-        <form action="" method="get">
-            <h1>Database</h1>
-            <input id="nome" type="text" value="" placeholder="">
-            <input id="cognome" type="text" value="" placeholder="">
-            <button type="submit">Rinomina</button>
-        </form>
+        <script> //CREAZIONE LISTA
+            let lista=['Barbabietola', 'Carote', 'Patate','Legumi'];
 
+            for(i=0;i<lista.length;i++){
+                const elemento=document.createElement('input'); document.body.appendChild(elemento); elemento.classList.add('creato')//Crea elemento e aggiunge la classe
+                elemento.value=`${i+1}: ${lista[i]}`;//TESTO                
+            }
+        </script>
+        
     </body>
 </html> <script>
-
-    let sNome = 'Inserire nome';
-    let sCognome = 'Inserire cognome';
-    const form=document.querySelector('form');
-    const nome=document.querySelector('#nome'); nome.placeholder=sNome;
-    const cognome=document.querySelector('#cognome'); cognome.placeholder=sCognome;
-    console.log(nome);
 /*
+    let sNome = 'Inserire nome';
+    const nome=document.querySelector('#nome'); nome.placeholder=sNome;
+    console.log(nome);
+
     nome.addEventListener('change', function(){ //Rinomina nome
         console.log(nome.value);
         nome.placeholder=nome.value; nome.value=null; //quando inserisci nell'input si resetta
-    })
-    cognome.addEventListener('change', function(){ //Rinomina cognome
-        console.log(cognome.value);
-        cognome.placeholder=cognome.value; cognome.value=null;
     })*/
-
-    form.addEventListener('submit',()=>{
-        console.log(nome.value); sNome=nome.value;
-        console.log(cognome.value); sCognome=cognome.value;
-
-        nome.placeholder=sNome; nome.value=null; //quando inserisci nell'input si resetta
-        cognome.placeholder=sCognome.value; cognome.value=null;
-    })
-
 </script> <style>
     html{background: black; color: wheat;} *{ padding:5px; margin:0;transition:0.3s;}
-    form input, form button{ padding:10px; border-radius:10px; border-bottom:5px solid black; }
-    form input:hover,form button:hover{background:wheat;}
+    input, button{ padding:10px; border-radius:10px; display:block; }
+    input:hover,button:hover{background:wheat;}
 
+    p.creato{ border:10px solid transparent; } 
+    p.creato:hover{ transition:0.3s; border:10px solid wheat; border-radius:10px;}
 </style>
