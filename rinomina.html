@@ -1,34 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Pagina 1</title>
-    </head>
-    <body>
-        <script> //CREAZIONE LISTA
-            let lista=['Barbabietola', 'Carote', 'Patate','Legumi'];
 
-            for(i=0;i<lista.length;i++){
-                const elemento=document.createElement('input'); document.body.appendChild(elemento); elemento.classList.add('creato')//Crea elemento e aggiunge la classe
-                elemento.value=`${i+1}: ${lista[i]}`;//TESTO                
-            }
-        </script>
-        
-    </body>
-</html> <script>
-/*
-    let sNome = 'Inserire nome';
-    const nome=document.querySelector('#nome'); nome.placeholder=sNome;
-    console.log(nome);
-
-    nome.addEventListener('change', function(){ //Rinomina nome
-        console.log(nome.value);
-        nome.placeholder=nome.value; nome.value=null; //quando inserisci nell'input si resetta
-    })*/
-</script> <style>
+<style>
     html{background: black; color: wheat;} *{ padding:5px; margin:0;transition:0.3s;}
     input, button{ padding:10px; border-radius:10px; display:block; }
     input:hover,button:hover{background:wheat;}
 
-    p.creato{ border:10px solid transparent; } 
-    p.creato:hover{ transition:0.3s; border:10px solid wheat; border-radius:10px;}
+    p.js{ border:10px solid transparent; } 
+    p.js:hover{ transition:0.3s; border:10px solid wheat; border-radius:10px;}
 </style>
+
+
+<html lang="en">
+    <head> <title>Pagina 1</title> </head>
+    <body>
+        <h1 id="titolo">___</h1>
+
+        <script> //CREAZIONE LISTA
+            const h1=document.querySelector('#titolo');
+            
+
+            const inputjs=document.createElement('input'); 
+            document.body.appendChild(inputjs); //Crea elemento
+            inputjs.placeholder=`Inserisci`;//TESTO
+            inputjs.classList.add('js');//aggiunge la classe
+
+            inputjs.addEventListener('change', function(){
+                h1.textContent=inputjs.value; inputjs.value='';
+            })
+        </script>
+        
+    </body>
+</html> 

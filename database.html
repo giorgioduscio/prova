@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<script>
+    class persona{
+        constructor(nome, cognome, nascita, interessi){
+            this.nome=nome; 
+            this.cognome=cognome; 
+            this.nascita=nascita; 
+            this.interessi=interessi;
+        }
+    }
+    const rN=document.querySelector('renameNome');
+    const rC=document.querySelector('renameCognome');
+    const rB=document.querySelector('renameButton');
+
+</script> <style>
+    html{background: black; color: wheat;} *{ padding:5px; margin:0;}
+    input,button{ border-radius: 5px; }
+        input:hover,button:hover{ background:wheat; transition:0.3s; }
+    
+</style>
+<html lang="en">
+    <head> <title>Database</title>   </head>
+    <body>
+        <h1>Inserimento</h1>
+        <input name="renameNome" type="text" placeholder="Nome">
+        <input name="renameCognome" type="text" placeholder="Cognome">
+        <button name="renameButton">Rinomina</button>
+
+        <h1>Database</h1>
+        
+    </body>
+</html> 
