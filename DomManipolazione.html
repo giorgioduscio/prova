@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> <title>Document</title> </head>
+    <body>
+        <div>
+            <span id="hi">Hi HTML</span>
+            <span id="bye">Bye HTML</span>
+            <span id="attributi" data-test="GGGGGGGG" data-longer-name="DLN">attributi HTML</span>
+            <span class="spanClass">settaggio classe</span>
+        </div>
+    </body>
+</html>
+<style>
+    html{background: black;} *{ padding:5px; margin:0; color: greenyellow;}
+    input,button{ border-radius: 5px; }
+        input:hover,button:hover{ background:wheat; transition:0.3s; }
+</style>
+<script>
+    //scrivere
+    const body=document.body;
+    body.append("1) Append");
+
+    //creare elementi
+    const divJs=document.createElement('div');
+    body.append(divJs)
+    //SCRIVERE IN UN ELEMENTO
+    divJs.innerText='2) innerText'
+    divJs.textContent='3) textContent'
+
+    //MODIFICARE ELEMENTI HTML
+    divJs.innerHTML=`<i>4) InnerHTML ${4+4}</i>`
+    const strong=document.createElement('strong')
+    strong.innerText='Hello word 2'
+
+    //RIMUOVERE ELEMENTI
+    const divHtml = document.querySelector('div')
+    const spanHi=document.querySelector('#hi')
+    const spanBye=document.querySelector('#bye')
+    //spanBye.remove()
+
+    //MODIFICARE ATTRIBUTI ELEMENTI
+    const spanAttributi=document.querySelector('#attributi')
+    console.log(spanAttributi.getAttribute('title', 'ciao'))
+
+    //MODIFICARE DATA ELEMENTI
+    console.log(spanAttributi.dataset)
+    console.log( spanAttributi.dataset.longerName)
+    spanAttributi.dataset.newNome='nuovo dataSet'
+
+    //MODIFICARE CLASSE ELEMENTO
+    const spanClass=document.querySelector('.spanClass')
+    spanClass.classList.add('nuovaClasse')
+    spanClass.classList.remove('spanClass')
+    spanClass.classList.toggle('pippo',true)
+
+    //MODIFICARE STILE ELEMENTO
+    spanClass.style.color='#ff0080'
+
+
+</script>
