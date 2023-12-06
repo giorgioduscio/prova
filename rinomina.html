@@ -15,15 +15,16 @@
     <body>
         <h1 id="titolo">___</h1>
 
-        <script> //CREAZIONE LISTA
+        <script>
             const h1=document.querySelector('#titolo');
             
-
-            const inputjs=document.createElement('input'); 
-            document.body.appendChild(inputjs); //Crea elemento
+            //CREA INPUT
+            const inputjs=document.createElement('input'); //Crea elemento
+            document.body.appendChild(inputjs); //Posizione elemento
             inputjs.placeholder=`Inserisci`;//TESTO
             inputjs.classList.add('js');//aggiunge la classe
 
+            //SOVRASCRIVE IL TITOLO
             inputjs.addEventListener('change', function(){
                 h1.textContent=inputjs.value; inputjs.value='';
             })

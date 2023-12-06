@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<script>
-    class persona{
-        constructor(nome, cognome, nascita, interessi){
-            this.nome=nome; 
+<!DOCTYPE html> 
+<script>// CREA OGGETTO >>> CREA INPUT >>> AL CLICK INSERISCI VALORI >>> CREA OUTPUT VALORI
+    class ogg{
+        constructor(prenome, cognome, eta){
+            this.prenome=prenome; 
             this.cognome=cognome; 
-            this.nascita=nascita; 
-            this.interessi=interessi;
+            this.eta=eta;
         }
+        get presentazione(){return `${this.prenome} ${this.cognome} di ${this.eta} anni`};
+        set setPrenome(Nprenome){ this.prenome=Nprenome };
+        set setCognome(Ncognome){ this.cognome=Ncognome };
+        set setEta(Neta){ this.eta=Neta }
     }
-    const rN=document.querySelector('renameNome');
-    const rC=document.querySelector('renameCognome');
-    const rB=document.querySelector('renameButton');
+
+    const persona=new ogg('Mario','Rossi',15); 
+    persona.setPrenome='Pippo'; persona.setCognome='Pippiso'; persona.eta=44; 
+    console.log(persona.presentazione);
+
+
+
 
 </script> <style>
     html{background: black; color: wheat;} *{ padding:5px; margin:0;}
@@ -19,14 +26,14 @@
     
 </style>
 <html lang="en">
-    <head> <title>Database</title>   </head>
+    <head> <title>Database</title> </head>
     <body>
         <h1>Inserimento</h1>
-        <input name="renameNome" type="text" placeholder="Nome">
-        <input name="renameCognome" type="text" placeholder="Cognome">
-        <button name="renameButton">Rinomina</button>
+        <input name="nome" type="text" placeholder="Nome">
+        <input name="cognome" type="text" placeholder="Cognome">
+        <button name="inserisci">Invio</button>
 
-        <h1>Database</h1>
+        <h1 id="database">Database</h1>
         
     </body>
 </html> 
