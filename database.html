@@ -1,5 +1,21 @@
 <!DOCTYPE html> 
-<script>// CREA OGGETTO >>> CREA INPUT >>> AL CLICK INSERISCI VALORI >>> CREA OUTPUT VALORI
+
+<html lang="en">
+    <!--  CREA OGGETTO >>> CREA INPUT >>> AL CLICK INSERISCI VALORI >>> CREA OUTPUT VALORI-->
+    <head> <title>Database</title> </head>
+    <body>
+        <h1>Inserimento</h1>
+        <input id="prenome" type="text" placeholder="Nome">
+        <input id="cognome" type="text" placeholder="Cognome">
+        <input id="eta" type="number" placeholder="Età">
+        <button id="inserisci">Invio</button>
+
+        <h1 id="database">Database</h1>
+        
+    </body>
+</html> 
+<script>
+    //crea oggetto
     class ogg{
         constructor(prenome, cognome, eta){
             this.prenome=prenome; 
@@ -11,12 +27,27 @@
         set setCognome(Ncognome){ this.cognome=Ncognome };
         set setEta(Neta){ this.eta=Neta }
     }
+    
+    //crea input
+    const prenomeBox=document.querySelector('#prenome')
+    const cognomeBox=document.querySelector('#cognome')
+    const etaBox=document.querySelector('#eta')
+    const pulsante=document.querySelector('#inserisci')
+    const h1=document.querySelector('#database')
 
+    //al click inserisci valori
+    pulsante.onclick=function aggiungi(){console.log('Inserisci nel database')
+        const add=new ogg(prenomeBox.value,cognomeBox.value,etaBox.value)
+        h1.innerText=add.presentazione
+    }
+    
+
+/*
     const persona=new ogg('Mario','Rossi',15); 
     persona.setPrenome='Pippo'; persona.setCognome='Pippiso'; persona.eta=44; 
     console.log(persona.presentazione);
-
-
+    h1.innerText=persona.presentazione
+*/
 
 
 </script> <style>
@@ -25,15 +56,3 @@
         input:hover,button:hover{ background:wheat; transition:0.3s; }
     
 </style>
-<html lang="en">
-    <head> <title>Database</title> </head>
-    <body>
-        <h1>Inserimento</h1>
-        <input name="nome" type="text" placeholder="Nome">
-        <input name="cognome" type="text" placeholder="Cognome">
-        <button name="inserisci">Invio</button>
-
-        <h1 id="database">Database</h1>
-        
-    </body>
-</html> 
