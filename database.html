@@ -34,20 +34,24 @@
     const etaBox=document.querySelector('#eta')
     const pulsante=document.querySelector('#inserisci')
     const h1=document.querySelector('#database')
+    const memoria=[]
 
     //al click inserisci valori
-    pulsante.onclick=function aggiungi(){console.log('Inserisci nel database')
-        const add=new ogg(prenomeBox.value,cognomeBox.value,etaBox.value)
-        h1.innerText=add.presentazione
-    }
-    
+    pulsante.onclick=function aggiungi(){
+        const istanza=new ogg(prenomeBox.value,cognomeBox.value,etaBox.value)//crea nuovo elemento
+        memoria.push(istanza); //aggiunge alla memoria
+        prenomeBox.value=''; cognomeBox.value=''; etaBox.value='';//reset box
+        
 
-/*
-    const persona=new ogg('Mario','Rossi',15); 
-    persona.setPrenome='Pippo'; persona.setCognome='Pippiso'; persona.eta=44; 
-    console.log(persona.presentazione);
-    h1.innerText=persona.presentazione
-*/
+        for(i=0;i<memoria.length;i++){
+            console.log(`${i+1}: ${memoria[i].prenome} ${memoria[i].cognome} ${memoria[i].eta}`)
+        }
+    }
+
+    
+    //crea output valori
+    memoria.change=function mostra(){console.log('Avvio')}
+    console.log('Array', memoria)    
 
 
 </script> <style>
