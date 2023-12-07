@@ -10,7 +10,11 @@
         <input id="eta" type="number" placeholder="Età">
         <button id="inserisci">Invio</button>
 
-        <h1 id="database">Database</h1>
+        <div id="database">
+            <h1>Database</h1>
+
+        </div>
+        
         
     </body>
 </html> 
@@ -33,25 +37,29 @@
     const cognomeBox=document.querySelector('#cognome')
     const etaBox=document.querySelector('#eta')
     const pulsante=document.querySelector('#inserisci')
-    const h1=document.querySelector('#database')
+    
+    const div=document.querySelector('#database')
+    
     const memoria=[]
 
     //al click inserisci valori
     pulsante.onclick=function aggiungi(){
         const istanza=new ogg(prenomeBox.value,cognomeBox.value,etaBox.value)//crea nuovo elemento
-        memoria.push(istanza); //aggiunge alla memoria
         prenomeBox.value=''; cognomeBox.value=''; etaBox.value='';//reset box
-        
+        memoria.push(istanza); //aggiunge alla memoria
 
-        for(i=0;i<memoria.length;i++){
-            console.log(`${i+1}: ${memoria[i].prenome} ${memoria[i].cognome} ${memoria[i].eta}`)
-        }
+        mostra()//output
     }
 
     
     //crea output valori
-    memoria.change=function mostra(){console.log('Avvio')}
-    console.log('Array', memoria)    
+    function mostra(){ console.log(`>>> `,'Dati salvati', memoria) 
+
+        for(i=0;i<memoria.length;i++){            console.log(`Elemento ${i+1}: ${memoria[i].prenome} ${memoria[i].cognome}, ${memoria[i].eta} anni`)
+            const p=document.createElement('p'); div.appendChild(p)
+            p.textContent=`Elemento ${i+1}: ${memoria[i].prenome} ${memoria[i].cognome}, ${memoria[i].eta} anni`
+        }
+    }   
 
 
 </script> <style>
