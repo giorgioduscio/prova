@@ -1,18 +1,17 @@
 <!DOCTYPE html> 
+    <!--  CREA OGGETTO >>> CREA INPUT >>> AL CLICK INSERISCI VALORI >>> CREA OUTPUT VALORI-->
 
 <html lang="en">
-    <!--  CREA OGGETTO >>> CREA INPUT >>> AL CLICK INSERISCI VALORI >>> CREA OUTPUT VALORI-->
     <head> <title>Database</title> </head>
     <body>
-        <h1>Inserimento</h1>
-        <input id="prenome" type="text" placeholder="Nome">
-        <input id="cognome" type="text" placeholder="Cognome">
-        <input id="eta" type="number" placeholder="Età">
-        <button id="inserisci">Invio</button>
+        <div>
+            <h1>Inserimento</h1> 
+            <input id="nome" type="text" placeholder="Nome">
+            <button id="inserisci" onclick="inserimento()">Invio</button>
+        </div>
 
         <div id="database">
-            <h1>Database</h1>
-
+            <h1 style="border-bottom:2px solid;">Database</h1>
         </div>
         
         
@@ -21,50 +20,56 @@
 <script>
     //crea oggetto
     class ogg{
-        constructor(prenome, cognome, eta){
-            this.prenome=prenome; 
-            this.cognome=cognome; 
-            this.eta=eta;
-        }
-        get presentazione(){return `${this.prenome} ${this.cognome} di ${this.eta} anni`};
-        set setPrenome(Nprenome){ this.prenome=Nprenome };
-        set setCognome(Ncognome){ this.cognome=Ncognome };
-        set setEta(Neta){ this.eta=Neta }
+        constructor(nome){ this.nome=nome; }
+        get presentazione(){return nome};
+        set setPrenome(Nnome){ this.nome=Nnome };
     }
     
-    //crea input
-    const prenomeBox=document.querySelector('#prenome')
-    const cognomeBox=document.querySelector('#cognome')
-    const etaBox=document.querySelector('#eta')
+    //elementi di input
+    const nomeBox=document.querySelector('#nome')
     const pulsante=document.querySelector('#inserisci')
     
     const div=document.querySelector('#database')
-    
-    const memoria=[]
+    let memoria=[
+        istanza1=new ogg('Davide'),
+        istanza2=new ogg('Alessio'),
+    ]
+    let sas=0
 
-    //al click inserisci valori
-    pulsante.onclick=function aggiungi(){
-        const istanza=new ogg(prenomeBox.value,cognomeBox.value,etaBox.value)//crea nuovo elemento
-        prenomeBox.value=''; cognomeBox.value=''; etaBox.value='';//reset box
-        memoria.push(istanza); //aggiunge alla memoria
+    function inserimento(){
+        let istanza=new ogg(nomeBox.value); memoria.push(istanza);//crea istanza e salva
+        nomeBox.value='';//svuota box
+        console.log(`Locale`, memoria)
+        sas+=1; console.log(`Local sas`, sas)
 
-        mostra()//output
-    }
+        //mostra
 
-    
-    //crea output valori
-    function mostra(){ console.log(`>>> `,'Dati salvati', memoria) 
 
-        for(i=0;i<memoria.length;i++){            console.log(`Elemento ${i+1}: ${memoria[i].prenome} ${memoria[i].cognome}, ${memoria[i].eta} anni`)
-            const p=document.createElement('p'); div.appendChild(p)
-            p.textContent=`Elemento ${i+1}: ${memoria[i].prenome} ${memoria[i].cognome}, ${memoria[i].eta} anni`
+        
+        for(i=0;i<memoria.length;i++){
+            if(memoria[i]==null){ 
+                console.log('Blocco'); break 
+            }else{
+                let p=document.createElement('p'); arrayOut.appendChild(p)
+                p.textContent=`${i+1}: ${memoria[i].nome}`
+            }
         }
-    }   
+        return memoria;
+    } 
 
+    function mostra(){    }
+
+
+    // AVVIO PROGRAMMA 
+
+    mostra(); 
+
+    //ISTANZA NON SI INSERISCE NELLA MEMORIA
 
 </script> <style>
-    html{background: black; color: wheat;} *{ padding:5px; margin:0;}
-    input,button{ border-radius: 5px; }
+    html{background: black; color: wheat;} *{ padding:10px; margin:0;}
+    input,button{ border:1px solid transparent; border-radius: 5px; }
         input:hover,button:hover{ background:wheat; transition:0.3s; }
+    div{ background:gray;border-radius:5px; margin:0 0 10px 0;}
     
 </style>
