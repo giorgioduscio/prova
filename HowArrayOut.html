@@ -5,9 +5,35 @@
         <title></title>
     </head>
     <body>
-        
+        <div>
+            <h1>Persone</h1>
+            <div id="contenitore"></div>
+        </div>
     </body>
-</html><script>
-    const title=document.querySelector('title'); title='Zuppa';
+</html><script> titolo='Database'
+    const titoloPag=document.querySelector('title'); titoloPag.textContent=titolo
+    const titoloText=document.querySelector('h1'); titoloText.textContent=titolo
+    
 
+
+    const array=[
+        {nome:'Aldo'}, 
+        {nome:'Barbara'}, 
+        {nome:'Carlo'}, 
+    ]
+    let newNome={nome:'Debora'}; array.push(newNome)
+    
+    function generate(arg){//genera output dati
+        let items=''
+
+        for(i=0;i<array.length;i++){
+            items+=`<li>${arg[i].nome}</li>`
+        }
+        return items;
+    }
+
+    //seleziona posizione e contenitore
+    document.querySelector("#contenitore").innerHTML=`<ol>${generate(array)}</ol>`//aggiungi elemento nell'elemento
+    
+    
 </script>

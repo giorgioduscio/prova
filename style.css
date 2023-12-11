@@ -1,1 +1,3 @@
 html{background: black; color: wheat;} *{ padding:10px; margin:0;}
+body>*{ background:gray; border-radius:5px;}
+h1{border-bottom:1px solid wheat;}
