@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="style.css">
-        <title></title>
+        <title>Mostra</title>
     </head>
     <body>
         <div>
@@ -10,9 +10,7 @@
             <div id="contenitore"></div>
         </div>
     </body>
-</html><script> titolo='Database'
-    const titoloPag=document.querySelector('title'); titoloPag.textContent=titolo
-    const titoloText=document.querySelector('h1'); titoloText.textContent=titolo
+</html><script> 
     
 
 
@@ -31,7 +29,6 @@
         }
         return items;
     }
-
     //seleziona posizione e contenitore
     document.querySelector("#contenitore").innerHTML=`<ol>${generate(array)}</ol>`//aggiungi elemento nell'elemento
     

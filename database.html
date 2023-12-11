@@ -13,8 +13,9 @@
             <button id="inserisci" onclick="inserimento()">Invio</button>
         </div>
 
-        <div id="database">
+        <div>
             <h1 style="border-bottom:2px solid;">Database</h1>
+            <main id="database"></main>
         </div>
         
         
@@ -36,8 +37,8 @@
     let memoria=[
         istanza1=new ogg('Davide'),
         istanza2=new ogg('Alessio'),
+        istanza3=new ogg('Angelo'),
     ]
-    let sas=0
 
     function inserimento(){
         let istanza=new ogg(nomeBox.value); memoria.push(istanza);//crea istanza e salva
@@ -45,32 +46,22 @@
         console.log(`Locale`, memoria)
         sas+=1; console.log(`Local sas`, sas)
 
-        //mostra
-
-
-        
-        for(i=0;i<memoria.length;i++){
-            if(memoria[i]==null){ 
-                console.log('Blocco'); break 
-            }else{
-                let p=document.createElement('p'); arrayOut.appendChild(p)
-                p.textContent=`${i+1}: ${memoria[i].nome}`
-            }
-        }
         return memoria;
     } 
 
-    function mostra(){    }
+    function mostra(array){//genera output dati
+        let stringa=''//la variabile è una stringa
+        for(i=0;i<array.length;i++){
+            stringa+=`<li>${array[i].nome}</li>`//aggiunge lettere alla stringa
+        }
+        return stringa;//restituisci valore 
+    }
+    //seleziona posizione e contenitore
+    document.querySelector("#database").innerHTML=`<ol>${mostra(memoria)}</ol>`//aggiungi elemento nell'elemento
+    console.log('Funzione',mostra(memoria))
 
-
-    // AVVIO PROGRAMMA 
-
-    mostra(); 
-
-    //ISTANZA NON SI INSERISCE NELLA MEMORIA
 
 </script> <style>
-    html{background: black; color: wheat;} *{ padding:10px; margin:0;}
     input,button{ border:1px solid transparent; border-radius: 5px; }
         input:hover,button:hover{ background:wheat; transition:0.3s; }
     div{ background:gray;border-radius:5px; margin:0 0 10px 0;}
