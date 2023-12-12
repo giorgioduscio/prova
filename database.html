@@ -7,63 +7,59 @@
         <title>Database</title>
     </head>
     <body>
-        <div>
+        <article>
             <h1>Inserimento</h1> 
-            <input id="nome" type="text" placeholder="Nome">
-            <button id="inserisci" onclick="inserimento()">Invio</button>
-        </div>
+            <input id="nomeBox" type="text" placeholder="Nome">
+            <button id="inserimento">Invio</button>
+        </article>
 
-        <div>
+        <article>
             <h1 style="border-bottom:2px solid;">Database</h1>
             <main id="database"></main>
-        </div>
-        
-        
+        </article>
     </body>
 </html> 
 <script>
-    //crea oggetto
+    //CREA OGGETTO
     class ogg{
         constructor(nome){ this.nome=nome; }
-        get presentazione(){return nome};
-        set setPrenome(Nnome){ this.nome=Nnome };
     }
     
-    //elementi di input
-    const nomeBox=document.querySelector('#nome')
-    const pulsante=document.querySelector('#inserisci')
+    //ELEMENTI DI INPUT DI PROVA
+    const nomeBox=document.querySelector('#nomeBox')
+    const pulsante=document.querySelector('#inserimento')
     
     const div=document.querySelector('#database')
-    let memoria=[
+    const memoria=[
         istanza1=new ogg('Davide'),
         istanza2=new ogg('Alessio'),
         istanza3=new ogg('Angelo'),
     ]
 
-    function inserimento(){
-        let istanza=new ogg(nomeBox.value); memoria.push(istanza);//crea istanza e salva
-        nomeBox.value='';//svuota box
-        console.log(`Locale`, memoria)
-        sas+=1; console.log(`Local sas`, sas)
+    //INSERIMENTO
+        function creaIstanza(nome){
+            let nuovaIstanza=new ogg(nome);//crea istanza
+            return nuovaIstanza;//restituisce valore
+        } 
+    pulsante.addEventListener('click',()=>{
+        if(nomeBox.value==''){console.log('Annullato');}
+        else{ 
+            memoria.push( creaIstanza(nomeBox.value) )
+            nomeBox.value='';//svuota box
 
-        return memoria;
-    } 
+            console.log("Memoria",memoria)
+        }        
+    })
 
-    function mostra(array){//genera output dati
+    //OUTPUT DATI
+    function mostra(array){ console.log("> Memoria Finale",memoria)
         let stringa=''//la variabile è una stringa
         for(i=0;i<array.length;i++){
-            stringa+=`<li>${array[i].nome}</li>`//aggiunge lettere alla stringa
+            stringa+=`<input value="${array[i].nome}"><input value="${array[i].nome}"><br>`//aggiunge lettere alla stringa
         }
         return stringa;//restituisci valore 
     }
-    //seleziona posizione e contenitore
-    document.querySelector("#database").innerHTML=`<ol>${mostra(memoria)}</ol>`//aggiungi elemento nell'elemento
-    console.log('Funzione',mostra(memoria))
+    document.querySelector("#database").innerHTML=`<div class="creaCampi">${mostra(memoria)}</div>`//aggiungi elemento nell'elemento
 
 
-</script> <style>
-    input,button{ border:1px solid transparent; border-radius: 5px; }
-        input:hover,button:hover{ background:wheat; transition:0.3s; }
-    div{ background:gray;border-radius:5px; margin:0 0 10px 0;}
-    
-</style>
+</script> 
