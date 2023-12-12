@@ -1,10 +1,9 @@
 
 *{ padding:10px; margin:0; transition:0.3s; 
-    --sfondo:#80808050; --tema:#f5deb3;background:var(--sfondo);color:var(--tema); }
+    --sfondo:#80808050; --tema:#00ff00;background:var(--sfondo);color:var(--tema); }
 
 html{background: black;} 
-body>*{ border-radius:5px;}
-article{ border-radius:5px;margin:0 0 10px 0;}
+header,nav,article,footer,aside{ border-radius:5px; margin:0 0 10px 0;}
 
 
 h1{border-bottom:1px solid var(--tema); margin:0 0 10px 0;}

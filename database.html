@@ -36,20 +36,22 @@
         istanza3=new ogg('Angelo'),
     ]
 
-    //INSERIMENTO
+    //CREA NUOVA ISTANZA
         function creaIstanza(nome){
             let nuovaIstanza=new ogg(nome);//crea istanza
             return nuovaIstanza;//restituisce valore
         } 
-    pulsante.addEventListener('click',()=>{
+    //INSERIMENTO
+    pulsante.addEventListener('click', function inserimento (array){
         if(nomeBox.value==''){console.log('Annullato');}
         else{ 
-            memoria.push( creaIstanza(nomeBox.value) )
-            nomeBox.value='';//svuota box
+            array.push( creaIstanza(nomeBox.value) )
+            console.log("Memoria",array)
 
-            console.log("Memoria",memoria)
+            nomeBox.value='';//svuota box
+            return array
         }        
-    })
+    }) 
 
     //OUTPUT DATI
     function mostra(array){ console.log("> Memoria Finale",memoria)
