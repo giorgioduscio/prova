@@ -37,14 +37,18 @@
     }displayForHeach()
 
     function displayInnerHtml(array) {//Quando viene richiamata
-        let items=''//inizializza la stringa
-        for(i=0;i<array.length;i++){
-            items+=`<li>${array[i]}</li>`//aggiungi gli elementi dell'array alla stringa
+        function elementi(array){
+            let items=''//inizializza la stringa
+            for(i=0;i<array.length;i++){
+                items+=`<li>${array[i]}</li>`//aggiungi gli elementi dell'array alla stringa
+            }
+            return items;//Manda la stringa
         }
-        return items;//Manda la stringa
-    }
-    document.querySelector("#listInnetHtml").innerHTML=
-    `<ol>${displayInnerHtml(list)}</ol>`//aggiungi elemento nell'elemento
+        document.querySelector("#listInnetHtml").innerHTML=""
+        document.querySelector("#listInnetHtml").innerHTML=`<ol>${elementi(array)}</ol>`//aggiungi elemento nell'elemento
+
+    }displayInnerHtml(list)
+
 
     //INPUT
     const input=document.querySelector('input')
@@ -58,9 +62,6 @@
         updateList()
         displayForHeach()
         displayInnerHtml(list)
-        document.querySelector("#listInnetHtml").innerHTML=""
-        document.querySelector("#listInnetHtml").innerHTML=
-        `<ol>${displayInnerHtml(list)}</ol>`//aggiungi elemento nell'elemento
     })
     
 </script>
