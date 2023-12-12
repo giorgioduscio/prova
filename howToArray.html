@@ -10,14 +10,16 @@
             <button id="aggiungi">Aggiungi</button>
             <button id="cancella">Cancella</button>
         </header>
-        <article>
-            <h1>Metodo forHeach</h1>
-            <ol id="listForHeach"></ol>
-        </article>
-        <article>
-            <h1>Metodo innetHtml</h1>
-            <ol id="listInnetHtml"></ol>
-        </article>
+        <section style="display:flex;">
+            <article>
+                <h1>Metodo forHeach</h1>
+                <ol id="listForHeach"></ol>
+            </article>
+            <article>
+                <h1>Metodo innetHtml</h1>
+                <ol id="listInnetHtml"></ol>
+            </article>
+        </section>
     </body>
 </html>
 <script>
@@ -34,14 +36,15 @@
         });
     }displayForHeach()
 
-    function displayInnerHtml(array) {
-        let items=''
+    function displayInnerHtml(array) {//Quando viene richiamata
+        let items=''//inizializza la stringa
         for(i=0;i<array.length;i++){
-            items+=`<li>${array[i]}</li>`
+            items+=`<li>${array[i]}</li>`//aggiungi gli elementi dell'array alla stringa
         }
-        return items;
+        return items;//Manda la stringa
     }
-    document.querySelector("#listInnetHtml").innerHTML=`<ol>${displayInnerHtml(list)}</ol>`//aggiungi elemento nell'elemento
+    document.querySelector("#listInnetHtml").innerHTML=
+    `<ol>${displayInnerHtml(list)}</ol>`//aggiungi elemento nell'elemento
 
     //INPUT
     const input=document.querySelector('input')
@@ -54,6 +57,10 @@
     agg.addEventListener('click',()=>{//AL CLICK
         updateList()
         displayForHeach()
+        displayInnerHtml(list)
+        document.querySelector("#listInnetHtml").innerHTML=""
+        document.querySelector("#listInnetHtml").innerHTML=
+        `<ol>${displayInnerHtml(list)}</ol>`//aggiungi elemento nell'elemento
     })
     
 </script>

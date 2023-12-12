@@ -3,7 +3,7 @@
     --sfondo:#80808050; --tema:#00ff00;background:var(--sfondo);color:var(--tema); }
 
 html{background: black;} 
-header,nav,article,footer,aside{ border-radius:5px; margin:0 0 10px 0;}
+header,nav,section,article,footer,aside{ border-radius:5px; margin:0 0 10px 0;}
 
 
 h1{border-bottom:1px solid var(--tema); margin:0 0 10px 0;}
