@@ -18,17 +18,17 @@
         </nav>
         <section>
             <div style="width:50%;">
-                <article class="articolo1">
-                    <h1>Articolo 1</h1>
+                <article id="a1">
+                    <h1>Articolo Anatre</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
                 </article>
-                <article class="articolo2">
-                    <h1>Articolo 2</h1>
+                <article id="a2">
+                    <h1>Articolo Bisonti</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
                 </article>
-                <article class="articolo3">
-                    <h1>Articolo 3</h1>
+                <article id="a3">
+                    <h1>Articolo Cani</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
@@ -38,11 +38,9 @@
             <div style="width:30%;">
                 <aside>
                     <h1>Articoli</h1>
-                    <ol>
-                        <li><a id="linkArticolo1">Articolo 1</a></li>
-                        <li><a id="linkArticolo2">Articolo 2</a></li>
-                        <li><a id="linkArticolo3">Articolo 3</a></li>
-                    </ol>
+                    <button id="linkArticolo">Articolo 1: Anatre</button>
+                    <button id="linkArticolo">Articolo 2: Bisonti</button>
+                    <button id="linkArticolo">Articolo 3: Cani</button>
                 </aside>
             </div>
         </section>
@@ -57,12 +55,36 @@
     </body>
 </html>
 <script>
-    const l1=document.querySelector('#linkArticolo1'); 
-    const articolo1=document.querySelector('.articolo1'); articolo1.style.display='none'
-    l1.addEventListener('click',function(){
-        if(articolo1.style.display=='block'){
-            articolo1.style.display='none'
-        }else{articolo1.style.display='block'}
-    })
+
+    /*TODO array link*/
+    const link=document.querySelectorAll('#linkArticolo')
+    console.log('Link',link)
+    /*TODO array articoli*/
+    const articoli=document.querySelectorAll('article')
+    console.log('Articoli',articoli)
+
+    function reset() { /*TODO RESET*/
+        for (let i=0;i<articoli.length;i++) {
+            articoli[i].style.display='none'
+        }        
+    }reset()
+
+    function nascondi(articolo) { /*TODO NASCONDI*/
+        if(articolo.style.display=='block'){ articolo.style.display='none'; console.log(articolo,'Se si vede, nascondi')
+        }else{articolo.style.display='block';console.log(articolo,'Se è nascosto, mostra')}        
+    }
+
+    for (let i = 0; i < link.length; i++) {
+        link[i].addEventListener('click',()=>{
+            console.log(link[i])
+            articoli[i].style.display='block'
+        })
+        
+    }
+
+
+
+
+
 
 </script>
