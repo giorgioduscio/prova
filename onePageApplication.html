@@ -74,8 +74,10 @@
         }else{articolo.style.display='block';console.log(articolo,'Se è nascosto, mostra')}        
     }
 
+
     for (let i = 0; i < link.length; i++) {
         link[i].addEventListener('click',()=>{
+            reset()
             console.log(link[i])
             articoli[i].style.display='block'
         })
