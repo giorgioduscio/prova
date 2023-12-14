@@ -9,32 +9,37 @@
         </header>
         <nav>
             <div>
-                <button>Home</button>
+                <button id="linkArticolo">Home</button>
                 <button>Articoli</button>
             </div>
             <div>
-                <button>Iscriviti</button>
+                <button id="linkArticolo">Iscriviti</button>
             </div>
         </nav>
-        <section>
+        <section> 
             <div style="width:50%;">
-                <article id="a1">
+                <article> <!--TODO HOME-->
+                    <h1>Home</h1>
+                </article>
+                <article>
+                    <h1>Login</h1>
+                </article>
+                <article>
                     <h1>Articolo Anatre</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
                 </article>
-                <article id="a2">
+                <article>
                     <h1>Articolo Bisonti</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
                 </article>
-                <article id="a3">
+                <article>
                     <h1>Articolo Cani</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
                 </article>
             </div>
-
             <div style="width:30%;">
                 <aside>
                     <h1>Articoli</h1>
@@ -67,19 +72,24 @@
         for (let i=0;i<articoli.length;i++) {
             articoli[i].style.display='none'
         }        
-    }reset()
+    }reset(); articoli[0].style.display='block'
 
     function nascondi(articolo) { /*TODO NASCONDI*/
-        if(articolo.style.display=='block'){ articolo.style.display='none'; console.log(articolo,'Se si vede, nascondi')
-        }else{articolo.style.display='block';console.log(articolo,'Se è nascosto, mostra')}        
+        if(articolo.style.display=='block'){ 
+            articolo.style.display='none'; 
+            console.log(articolo,'Se si vede, nascondi')
+        }else{
+            articolo.style.display='block';
+            console.log(articolo,'Se è nascosto, mostra')
+        }        
     }
 
 
     for (let i = 0; i < link.length; i++) {
-        link[i].addEventListener('click',()=>{
-            reset()
-            console.log(link[i])
-            articoli[i].style.display='block'
+        link[i].addEventListener('click',()=>{//quando si clicca su un link
+            reset()//nascondi tutti gli articoli
+            console.log(link[i])//mostra il pulsante premuto
+            articoli[i].style.display='block'//mostra l'articolo legato al link
         })
         
     }
