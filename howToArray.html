@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en"><!-- TODO -->
     <head>
         <link rel="stylesheet" href="style.css">
         <title>Array</title>
@@ -26,7 +26,8 @@
 
     const listForHeach=document.querySelector('#listForHeach')
     let list=["Scarpe","Banane","Arancie"]
-    //OUTPUT
+
+    //TODO OUTPUT displayForHeach
     function displayForHeach(){//Quando viene richiamata
         listForHeach.innerHTML=''//Ricomincia la listForHeach da capo
         list.forEach((items) => {  
@@ -36,6 +37,7 @@
         });
     }displayForHeach()
 
+    //TODO OUTPUT displayInnerHtml
     function displayInnerHtml(array) {//Quando viene richiamata
         function elementi(array){
             let items=''//inizializza la stringa
@@ -46,17 +48,18 @@
         }
         document.querySelector("#listInnetHtml").innerHTML=""
         document.querySelector("#listInnetHtml").innerHTML=`<ol>${elementi(array)}</ol>`//aggiungi elemento nell'elemento
-
     }displayInnerHtml(list)
 
 
-    //INPUT
+    //TODO INPUT
     const input=document.querySelector('input')
     function updateList(){
         list.push(input.value)//AGIUNGI L'IMPUT ALLA LISTA
+        input.placeholder=`${input.value} aggiunto`
+        input.value=''
     }
 
-    //AVVIO
+    //FIXME AVVIO
     const agg=document.querySelector('#aggiungi'); const can=document.querySelector('#cancella')
     agg.addEventListener('click',()=>{//AL CLICK
         updateList()

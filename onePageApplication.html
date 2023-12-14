@@ -1,0 +1,68 @@
+<html lang="en"><!-- TODO -->
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>OnePageApplication</title>
+    </head>
+    <body>
+        <header>
+            <h1>Header</h1>
+        </header>
+        <nav>
+            <div>
+                <button>Home</button>
+                <button>Articoli</button>
+            </div>
+            <div>
+                <button>Iscriviti</button>
+            </div>
+        </nav>
+        <section>
+            <div style="width:50%;">
+                <article class="articolo1">
+                    <h1>Articolo 1</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
+                </article>
+                <article class="articolo2">
+                    <h1>Articolo 2</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
+                </article>
+                <article class="articolo3">
+                    <h1>Articolo 3</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab soluta deserunt laudantium voluptates fugit architecto veritatis a omnis qui aperiam dicta facilis, non unde veniam, tempora minima inventore adipisci?</p>
+                </article>
+            </div>
+
+            <div style="width:30%;">
+                <aside>
+                    <h1>Articoli</h1>
+                    <ol>
+                        <li><a id="linkArticolo1">Articolo 1</a></li>
+                        <li><a id="linkArticolo2">Articolo 2</a></li>
+                        <li><a id="linkArticolo3">Articolo 3</a></li>
+                    </ol>
+                </aside>
+            </div>
+        </section>
+        <footer>
+            <div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi dolores laboriosam voluptatem facere reiciendis voluptatum neque ab ducimus molestias, illo ad nostrum quibusdam alias necessitatibus rerum nesciunt iste expedita nemo?</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi dolores laboriosam voluptatem facere reiciendis voluptatum neque ab ducimus molestias, illo ad nostrum quibusdam alias necessitatibus rerum nesciunt iste expedita nemo?</p>
+            </div>
+        </footer>
+    </body>
+</html>
+<script>
+    const l1=document.querySelector('#linkArticolo1'); 
+    const articolo1=document.querySelector('.articolo1'); articolo1.style.display='none'
+    l1.addEventListener('click',function(){
+        if(articolo1.style.display=='block'){
+            articolo1.style.display='none'
+        }else{articolo1.style.display='block'}
+    })
+
+</script>

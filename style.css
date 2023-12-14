@@ -1,9 +1,14 @@
 
 *{ padding:10px; margin:0; transition:0.3s; 
-    --sfondo:#80808050; --tema:#00ff00;background:var(--sfondo);color:var(--tema); }
+    --sfondo:#80808050; --tema:#00ff00;background:var(--sfondo);color:var(--tema); 
+}
 
-html{background: black;} 
+html{background: #000000;} 
 header,nav,section,article,footer,aside{ border-radius:5px; margin:0 0 10px 0;}
+    header{ padding:100px 10px 10px 10px; background: linear-gradient(red, blue);} 
+    footer{ padding:100px 10px 100px 10px;}
+    nav{position:sticky;top:0; display: flex;justify-content: space-between; background-color: #000000;}
+    section,footer{display: flex;justify-content:center;}
 
 
 h1{border-bottom:1px solid var(--tema); margin:0 0 10px 0;}
@@ -11,3 +16,6 @@ input,button{ border:1px solid transparent; border-radius: 5px; }
         
 
 input:hover,button:hover{ background:var(--tema);color:black;  }
+a,button{cursor: pointer;}
+
+
