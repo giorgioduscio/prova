@@ -19,3 +19,17 @@ input:hover,button:hover{ background:var(--tema);color:black;  } button:after{ba
 a,button{cursor: pointer;} aside button{width:100%; display: block;margin-bottom:5px;}
 
 
+@keyframes animation {
+    0%   {color:red;}
+    25%  {color:yellow;}
+    50%  {color:blue;}
+    75%  {color:green;}
+    100% {color:red;}
+}.animation{animation-name: animation;    animation-duration: 30s; animation-iteration-count:infinite;}
+
+.dropdown{position: relative;display: inline-block; padding:0;}
+    .dropdown-c{position: absolute;display: none;left:-10px;z-index: 1;  
+        padding:5px 0;width: max-content;}
+        .dropdown-c *{ display: block; border-radius:0;}
+    .dropdown:hover .dropdown-c{display: block;}
+/*seleziona le classi dropdown-c all'interno di dropdown, quando quest'ultimo viene hoverato*/

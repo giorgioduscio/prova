@@ -12,9 +12,14 @@
         </Header>
 
         <nav>
-            <div class="dd"> 
-                <span><button>Pulsante</button></span> 
-                <div class="dd-c"><button>Dropdown 1</button><button>Dropdown 1</button></div>
+            <div> 
+                <div class="dropdown">
+                    <button>Pulsante</button>
+                    <div class="dropdown-c">
+                        <button>Dropdown 1</button>
+                        <button>Dropdown 2</button>
+                    </div>
+                </div> 
             </div> 
             
             <div><button>Pulsante</button></div>
@@ -86,18 +91,5 @@
     </body>
 </html><style> 
 
-@keyframes animation {
-        0%   {color:red;}
-        25%  {color:yellow;}
-        50%  {color:blue;}
-        75%  {color:green;}
-        100% {color:red;}
-    }.animation{animation-name: animation;    animation-duration: 30s; animation-iteration-count:infinite;}
-
-    header{
-        background:url("https://www.palermotoday.it/~media/horizontal-hi/38684999509947/cittadelmarehotelvillageterrasini-2.jpg"), no-repeat, center, fixed; background-size: cover; }
-        .dd{position: relative;  display: inline-block;}
-    .dd-c{position: absolute;   display: none; left:0;  min-width: 100px;  z-index: 1;}
-    .dd:hover .dd-c{display: block;}
-
+    header{background:url("https://www.palermotoday.it/~media/horizontal-hi/38684999509947/cittadelmarehotelvillageterrasini-2.jpg"), no-repeat, center, fixed; background-size: cover; }
 </style>

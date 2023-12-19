@@ -8,27 +8,29 @@
     p.js{ border:10px solid transparent; } 
     p.js:hover{ transition:0.3s; border:10px solid wheat; border-radius:10px;}
 </style>
-
-
 <html lang="en">
-    <head> <title>Pagina 1</title> </head>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Pagina 1</title>
+    </head>
     <body>
-        <h1 id="titolo">___</h1>
+        <h1 id="titolo">Titolo</h1>
 
-        <script>
-            const h1=document.querySelector('#titolo');
-            
-            //CREA INPUT
-            const inputjs=document.createElement('input'); //Crea elemento
-            document.body.appendChild(inputjs); //Posizione elemento
-            inputjs.placeholder=`Inserisci`;//TESTO
-            inputjs.classList.add('js');//aggiunge la classe
-
-            //SOVRASCRIVE IL TITOLO
-            inputjs.addEventListener('change', function(){
-                h1.textContent=inputjs.value; inputjs.value='';
-            })
-        </script>
+        
         
     </body>
 </html> 
+<script>
+    const h1=document.querySelector('#titolo');
+    
+    //CREA INPUT
+    const inputjs=document.createElement('input'); //Crea elemento
+    document.body.appendChild(inputjs); //Posizione elemento
+    inputjs.placeholder=`Inserisci`;//TESTO
+    inputjs.classList.add('js');//aggiunge la classe
+
+    //SOVRASCRIVE IL TITOLO
+    inputjs.addEventListener('change', function(){
+        h1.textContent=inputjs.value; inputjs.value='';
+    })
+</script>
