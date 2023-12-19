@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
         <title>Latout essential</title>
     </head>
 
@@ -13,33 +12,60 @@
         </Header>
 
         <nav>
-            <div class="dd"> <span><button>Pulsante</button></span> <div class="dd-c"><p>Dropdown 1</p><p>Dropdown 1</p></div> </div> 
+            <div class="dd"> 
+                <span><button>Pulsante</button></span> 
+                <div class="dd-c"><button>Dropdown 1</button><button>Dropdown 1</button></div>
+            </div> 
             
             <div><button>Pulsante</button></div>
         </nav>
         
         <section>
-            <div>
+            <div style="width:60%;">
                 <article>
                     <h1>Titolo</h1>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat in a optio doloremque maxime maiores, hic quasi quos voluptatum vel fugit velit eos soluta iusto quis sapiente cupiditate illum tempore.</p>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat in a optio doloremque maxime maiores, hic quasi quos voluptatum vel fugit velit eos soluta iusto quis sapiente cupiditate illum tempore.</p>
-                    <img src="https://img.uxcel.com/practices/layout-elements-1615798966694/a-1664529435501.jpg" height="500px">
+                    <img src="https://img.uxcel.com/practices/layout-elements-1615798966694/a-1664529435501.jpg" style="display: block; width:90%;">
                 </article>
                 <article>
-                    <h1>Titolo</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat in a optio doloremque maxime maiores, hic quasi quos voluptatum vel fugit velit eos soluta iusto quis sapiente cupiditate illum tempore.</p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat in a optio doloremque maxime maiores, hic quasi quos voluptatum vel fugit velit eos soluta iusto quis sapiente cupiditate illum tempore.</p>
+                    <form action=""><h1>Form</h1>
+                        <input type="text" placeholder="Nome">
+                        <select name="" id="">
+                            <option value="1">Seleziona</option>
+                            <option value="2">Due</option>
+                            <option value="3">Tre</option>
+                        </select>
+                        <button type="submit">Invio</button>
+                    </form>
+                </article>
+                <article>
+                    <table border="">
+                        <tr>
+                            <th>Company</th>
+                            <th>Contact</th>
+                            <th>Country</th>
+                        </tr>
+                        <tr>
+                            <td>Alfreds Futterkiste</td>
+                            <td>Maria Anders</td>
+                            <td>Germany</td>
+                        </tr>
+                        <tr>
+                            <td>Centro comercial Moctezuma</td>
+                            <td>Francisco Chang</td>
+                            <td>Mexico</td>
+                        </tr>
+                    </table>
                 </article>
             </div>
-
-            <div>
+            <div style="width:20%;">
                 <aside>
                     <h1>Most popular articles</h1>
                     <ul>
                         <li>Lunch</li>
                         <li>Breakfast</li>
-                        <ol type="a">
+                        <ol type="b">
                             <li>Coffee</li>
                             <li>Tea</li>
                             <li>Milk</li>
@@ -51,38 +77,27 @@
         </section>
 
         <footer>
-            <h1>Titolo</h1> 
-            <p><a href="#top">Go top</a> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit libero corporis fugiat, nostrum officiis sed dolorem culpa incidunt quibusdam vitae doloribus saepe qui, nulla blanditiis nesciunt beatae deserunt inventore! Veniam?</p>
+            <div>
+                <h1>Titolo</h1> 
+                <p><a href="#top">Go top</a> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit libero corporis fugiat, nostrum officiis sed dolorem culpa incidunt quibusdam vitae doloribus saepe qui, nulla blanditiis nesciunt beatae deserunt inventore! Veniam?</p>
+            </div>
         </footer>
 
     </body>
 </html><style> 
-    *{border: 1px solid black;  margin:0; padding:5px; transition:0.5s;}
-    @keyframes animation {
+
+@keyframes animation {
         0%   {color:red;}
         25%  {color:yellow;}
         50%  {color:blue;}
         75%  {color:green;}
-        100% {color:purple;}
+        100% {color:red;}
     }.animation{animation-name: animation;    animation-duration: 30s; animation-iteration-count:infinite;}
 
-    html{ display: flex; justify-content: center; background: white;}
-    body{ display: flex;    flex-direction: column;    align-items: center; width: 100%;}
-
-
-    header{width: 100%; padding: 300px 0 0 0; 
+    header{
         background:url("https://www.palermotoday.it/~media/horizontal-hi/38684999509947/cittadelmarehotelvillageterrasini-2.jpg"), no-repeat, center, fixed; background-size: cover; }
-
-    nav{width: 100%; position: sticky; top: 0; display: flex;    justify-content: space-between;    align-items: stretch;    flex-direction: row;    background-color: rgb(129, 255, 255); }
-    .dd{position: relative;  display: inline-block;}
+        .dd{position: relative;  display: inline-block;}
     .dd-c{position: absolute;   display: none; left:0;  min-width: 100px;  z-index: 1;}
     .dd:hover .dd-c{display: block;}
-
-    section {display: flex; justify-content: center;     align-items: stretch;     flex-direction: row;}
-        article{width: 1000px; border-radius: 20px; background: gray; margin:0 0 100px 0;}
-        aside{border-radius: 10px; background: gray; margin:0 0 100px 0;}
-        
-
-    footer{background: black; color: white; padding: 0 0 500px 0; width: 100%;}
 
 </style>
