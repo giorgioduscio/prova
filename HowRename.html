@@ -1,31 +1,19 @@
 <!DOCTYPE html>
-
-<style>
-    html{background: black; color: wheat;} *{ padding:5px; margin:0;transition:0.3s;}
-    input, button{ padding:10px; border-radius:10px; display:block; }
-    input:hover,button:hover{background:wheat;}
-
-    p.js{ border:10px solid transparent; } 
-    p.js:hover{ transition:0.3s; border:10px solid wheat; border-radius:10px;}
-</style>
 <html lang="en">
     <head>
         <link rel="stylesheet" href="style.css">
         <title>Pagina 1</title>
     </head>
     <body>
-        <h1 id="titolo">Titolo</h1>
-
-        
-        
+        <h1>Titolo</h1>
     </body>
 </html> 
 <script>
-    const h1=document.querySelector('#titolo');
+    const h1=document.querySelector('h1');
     
     //CREA INPUT
     const inputjs=document.createElement('input'); //Crea elemento
-    document.body.appendChild(inputjs); //Posizione elemento
+    document.body.appendChild(inputjs); //Posizione elemento dentro body
     inputjs.placeholder=`Inserisci`;//TESTO
     inputjs.classList.add('js');//aggiunge la classe
 
@@ -33,4 +21,10 @@
     inputjs.addEventListener('change', function(){
         h1.textContent=inputjs.value; inputjs.value='';
     })
+    inputjs.addEventListener('click', function(){console.log('click')})
+    inputjs.addEventListener('keypress', function(){console.log('keypress')})
+    inputjs.addEventListener('focus', function(){console.log('focus')})
 </script>
+<style>
+
+</style>
