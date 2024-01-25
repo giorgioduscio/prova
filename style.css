@@ -1,16 +1,21 @@
 /* LAYOUT */
     *{ margin:0; transition:0.3s; font-size:100%;
-        --sfondo:#80808050; --tema:#00ff00;
+        --sfondo:#80808050; --tema:#00ff00; --larghezza:1000px;
         background:var(--sfondo);color:var(--tema); 
     }
     html{background: #000000;} 
+    body{display: flex; flex-direction: column; align-content: center; align-items: center;}
+
     header,nav,section,article,footer,aside{ padding:10px; border-radius:5px; margin:0 0 10px 0;}
-        header{ padding:600px 10px 10px 10px; 
+        header{ padding:400px 20px 20px 20px; width: 100%;
             background: linear-gradient(#00ff00, #000, #00eeff);
         } 
-        footer{ padding:100px 10px 100px 10px;}
-        nav{position:sticky;top:0; display: flex;justify-content: space-between; background-color: #000000;}
-        section,footer{display: flex;justify-content:center;}
+        footer{ padding:100px 10px 100px 10px; width: 100%;}
+        nav{position:sticky;top:0; 
+            display: flex;justify-content: space-between; background-color: #000000;
+        }
+        section,footer,header{display:flex; justify-content:center;}
+        section>*, nav, footer *, header *{width:var(--larghezza);}
 
 
 /* COMPONENTI */

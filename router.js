@@ -9,9 +9,9 @@
     /*TODO RESET*/
     function reset() { 
         for (let i=0;i<articoli.length;i++) {
-            articoli[i].style.display='none'
+            articoli[i].style.display='none'; //nasconde tutti gli articoli
         }        
-    }reset(); articoli[0].style.display='block';
+    }reset(); articoli[0].style.display='block'; //mostra la home
 
     /*TODO NASCONDI*/
     function nascondi(articolo) { 
