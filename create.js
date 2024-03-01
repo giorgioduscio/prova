@@ -1,0 +1,1 @@
+document.querySelector("nav").innerHTML='<button>Autocreazione</button>'
