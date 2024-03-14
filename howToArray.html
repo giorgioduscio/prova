@@ -1,0 +1,70 @@
+<html lang="en"><!-- TODO -->
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Array</title>
+    </head>
+    <body>
+        <header>
+            <h1 id="h1">Lista array</h1>
+            <input type="text" id="input">
+            <button id="aggiungi">Aggiungi</button>
+            <button id="cancella">Cancella</button>
+        </header>
+        <section style="display:flex;">
+            <article>
+                <h1>Metodo forHeach</h1>
+                <ol id="listForHeach"></ol>
+            </article>
+            <article>
+                <h1>Metodo innetHtml</h1>
+                <ol id="listInnetHtml"></ol>
+            </article>
+        </section>
+    </body>
+</html>
+<script>
+
+    const listForHeach=document.querySelector('#listForHeach')
+    let list=["Scarpe","Banane","Arancie"]
+
+    //TODO OUTPUT displayForHeach
+    function displayForHeach(){//Quando viene richiamata
+        listForHeach.innerHTML=''//Ricomincia la listForHeach da capo
+        list.forEach((items) => {  
+            let li=document.createElement('li'); //crea elemento
+            li.innerHTML=items//dai valore all'elemento
+            listForHeach.appendChild(li)//mettilo dentro listForHeach
+        });
+    }displayForHeach()
+
+    //TODO OUTPUT displayInnerHtml
+    function displayInnerHtml(array) {//Quando viene richiamata
+        function elementi(array){
+            let items=''//inizializza la stringa
+            for(i=0;i<array.length;i++){
+                items+=`<li>${array[i]}</li>`//aggiungi gli elementi dell'array alla stringa
+            }
+            return items;//Manda la stringa
+        }
+        document.querySelector("#listInnetHtml").innerHTML=""
+        document.querySelector("#listInnetHtml").innerHTML=`<ol>${elementi(array)}</ol>`//aggiungi elemento nell'elemento
+    }displayInnerHtml(list)
+
+
+    //TODO INPUT
+    const input=document.querySelector('input')
+    function updateList(){
+        list.push(input.value)//AGIUNGI L'IMPUT ALLA LISTA
+        input.placeholder=`${input.value} aggiunto`
+        input.value=''
+    }
+
+    //FIXME AVVIO
+    const agg=document.querySelector('#aggiungi'); const can=document.querySelector('#cancella')
+    agg.addEventListener('click',()=>{//AL CLICK
+        updateList()
+        displayForHeach()
+        displayInnerHtml(list)
+    })
+    
+</script>
