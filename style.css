@@ -4,7 +4,7 @@
         background:var(--sfondo);color:var(--tema); 
     }
     html{background: #000000;} 
-    body{display: flex; flex-direction: column; align-content: center; align-items: center;}
+    body{}
 
     header,nav,section,article,footer,aside{ padding:10px; border-radius:5px; margin:0 0 10px 0;}
         header{ padding:400px 20px 20px 20px; width: 100%;
