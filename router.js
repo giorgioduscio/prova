@@ -1,4 +1,4 @@
-    /*todo array link*/
+    /*todo array link link link link link*/
     const link=document.querySelectorAll('#linkArticolo')
     console.log('Link',link)
 
